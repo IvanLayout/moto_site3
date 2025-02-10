@@ -3381,6 +3381,10 @@ textarea {
   outline: none;
 }
 
+.input:disabled{
+	color: var(--manatee);
+}
+
 .input:focus {
   border: 0.0625rem solid var(--cinnabar);
   background-color: transparent;
@@ -11729,6 +11733,18 @@ text-transform: uppercase;
           justify-content: space-between;
 }
 
+.info-popup__content .address-form__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    row-gap: 1.125rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+			margin-bottom: 2rem;
+  }
+
 .address-form__line {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -11789,6 +11805,44 @@ text-transform: uppercase;
   width: 0;
   height: 0;
   opacity: 0;
+}
+
+.delivery-logistics__address-change{
+	position: absolute;
+	right: calc(1rem - 2px);
+	top: calc(1rem - 2px);
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+}
+
+.delivery-logistics__address-change svg{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.radio-checkout__bot{
+	display: block;
+	margin-top: 1rem;
+	padding-bottom: .55rem;
+}
+
+.radio-checkout__name{
+	display: block;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.4;
+	color: var(--shark);
+}
+
+.radio-checkout__phone{
+	display: block;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.4;
+	color: var(--manatee);
+	margin-top: 1rem;
 }
 
 .radio-checkout__input:checked + .radio-checkout__emulator {
@@ -15002,6 +15056,24 @@ text-transform: uppercase;
 .action-card__compare._active,
 .card-basket__action-favorite._active{
 	color: var(--cinnabar);
+}
+
+.logistics__recipient_marg{
+	margin-top: 1.5rem;
+}
+
+.logistics__recipient_marg2{
+	margin-top: 2.5rem;
+}
+
+.logistics__recipient-title{
+	font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.015rem;
+    text-transform: uppercase;
+	margin-bottom: 1.5rem;
 }
 
 @media (min-width: 575px) {

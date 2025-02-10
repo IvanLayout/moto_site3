@@ -69,14 +69,28 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 	})
 
-	const masterCheckbox = document.querySelector(".master-checkbox");
-    const checkboxes = document.querySelectorAll(".inner-checkbox");
+	if ( document.querySelector(".master-checkbox") ) {
+		const masterCheckbox = document.querySelector(".master-checkbox");
+		const checkboxes = document.querySelectorAll(".inner-checkbox");
 
-    masterCheckbox.addEventListener("change", function () {
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = masterCheckbox.checked;
-        });
-    });
+		masterCheckbox.addEventListener("change", function () {
+			checkboxes.forEach(checkbox => {
+				checkbox.checked = masterCheckbox.checked;
+			});
+		});
+	}
+
+
+	if ( document.querySelector("#check-recipient") ) {
+		const checkRecipient = document.querySelector("#check-recipient");
+		const logisticsRecipientInput = document.querySelectorAll(".logistics__recipient-input");
+
+		checkRecipient.addEventListener("change", function () {
+			logisticsRecipientInput.forEach(input => {
+				input.disabled = this.checked;
+			});
+		});
+	}
 })
 
 
