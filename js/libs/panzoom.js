@@ -1402,7 +1402,7 @@ function makeSvgController(svgElement, options) {
 
     // The above line returns null on Firefox
     if (screenCTM === null) {
-      screenCTM = document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGMatrix();
+      screenCTM = document.createElementNS("https://www.w3.org/2000/svg", "svg").createSVGMatrix();
     }
 
     transform.x = screenCTM.e;

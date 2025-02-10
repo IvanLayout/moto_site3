@@ -232,7 +232,7 @@
 				var reducers_1 = __webpack_require__(655);
 				var store_1 = __importDefault(__webpack_require__(744));
 				var templates_1 = __importDefault(__webpack_require__(686));
-				/** @see {@link http://browserhacks.com/#hack-acea075d0ac6954f275a70023906050c} */
+				/** @see {@link https://browserhacks.com/#hack-acea075d0ac6954f275a70023906050c} */
 				var IS_IE11 =
 					'-ms-scroll-limit' in document.documentElement.style &&
 					'-ms-ime-align' in document.documentElement.style;
@@ -4090,7 +4090,7 @@
 					// If we are clearing all items, groups and options we reassign
 					// state and then pass that state to our proper reducer. This isn't
 					// mutating our actual state
-					// See: http://stackoverflow.com/a/35641992
+					// See: https://stackoverflow.com/a/35641992
 					if (action.type === 'CLEAR_ALL') {
 						state = exports.defaultState;
 					} else if (action.type === 'RESET_TO') {
@@ -4908,12 +4908,12 @@
 					/* harmony export */
 				});
 				/**
-				 * Fuse.js v6.6.2 - Lightweight fuzzy-search (http://fusejs.io)
+				 * Fuse.js v6.6.2 - Lightweight fuzzy-search (https://fusejs.io)
 				 *
-				 * Copyright (c) 2022 Kiro Risk (http://kiro.me)
+				 * Copyright (c) 2022 Kiro Risk (https://kiro.me)
 				 * All Rights Reserved. Apache Software License 2.0
 				 *
-				 * http://www.apache.org/licenses/LICENSE-2.0
+				 * https://www.apache.org/licenses/LICENSE-2.0
 				 */
 
 				function isArray(value) {

@@ -59,7 +59,7 @@
   }
 
   // Provide rounding-accurate toFixed method.
-  // Borrowed: http://stackoverflow.com/a/21323330/775265
+  // Borrowed: https://stackoverflow.com/a/21323330/775265
   function toFixed(value, exp) {
     value = value.toString().split("e");
     value = Math.round(+(value[0] + "e" + (value[1] ? +value[1] + exp : exp)));
