@@ -91,6 +91,30 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		});
 	}
+
+	if (document.querySelectorAll('.form__input')) {
+		const formInput = document.querySelectorAll('.form__input')
+
+		formInput.forEach(function(e){
+			formAnim(e)
+
+			e.addEventListener("change", () => {
+				formAnim(e)
+			})
+		})
+	}
+
+	if (document.querySelectorAll('.form__textarea')) {
+		const formTextarea = document.querySelectorAll('.form__textarea')
+
+		formTextarea.forEach(function(e){
+			formAnim(e)
+
+			e.addEventListener("change", () => {
+				formAnim(e)
+			})
+		})
+	}
 })
 
 
@@ -1428,17 +1452,28 @@ function dropdown() {
 
 			window.addEventListener('click', e => {
 				const target = e.target;
+
 				if (!target.closest('.dropdown-tabs__dropbtn')) {
 					const dropdownTabs = document.querySelector('.dropdown-tabs__nav');
-					const dropdownBtnTabs = document.querySelector(
-						'.dropdown-tabs__dropbtn'
-					);
+					const dropdownBtnTabs = document.querySelector('.dropdown-tabs__dropbtn');
 					if (dropdownTabs.classList.contains('show')) {
 						dropdownTabs.classList.remove('show');
 						dropdownBtnTabs.classList.remove('active');
 						if (target.closest('.dropdown-tabs__btn')) {
 							dropdownBtnTabs.querySelector('span').textContent =
 								target.textContent;
+						}
+					}
+				}
+
+				if (target.closest('.dropdown-tabs__btn')) {
+					if (document.querySelector('#pickup-line')) {
+						if (target.id === "pickup"){
+							document.querySelector('#pickup-line').classList.add('_show')
+						} else {
+							if (document.querySelector('#pickup-line').classList.contains('_show')) {
+								document.querySelector('#pickup-line').classList.remove('_show')
+							}
 						}
 					}
 				}
@@ -2866,4 +2901,14 @@ function uniqArray(array) {
 	return array.filter(function (item, index, self) {
 		return self.indexOf(item) === index;
 	});
+}
+
+function formAnim(input) {
+	let value = input.value;
+
+	if ( value != '' ) {
+		input.closest('.form__line').classList.add('_full')
+	} else {
+		input.closest('.form__line').classList.remove('_full')
+	}
 }

@@ -3366,19 +3366,65 @@ textarea {
   appearance: none;
 }
 
+.form__line{
+	position: relative;
+}
+
+.form__label{
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	width: calc(100% - 2px);
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--manatee);
+
+	line-height: 2.625rem;
+	padding: .5rem calc(1rem - 1px);
+	box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.05);
+	background: var(--concrete);
+	transition: .3s ease;
+	z-index: 2;
+	pointer-events: none;
+    border-radius: .75rem 0 .75rem 0;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.form__textarea + .form__label{
+	min-height: calc(10rem - 2px);
+}
+
+.form__input:focus + .form__label,
+.form__textarea:focus + .form__label,
+._full .form__label
+{
+    font-size: .75rem;
+    line-height: 1.2;
+
+    background: transparent;
+	box-shadow: none;
+	min-height: 1px;
+}
+
 .input {
   border-radius: 0.75rem 0px;
   width: 100%;
   font-size: 1rem;
   line-height: 1.4;
   display: block;
-  padding: 1.25rem 1rem;
-  border: 0.0625rem solid transparent;
+  padding: 1rem calc(1rem - 1px) 0;
+  border: 1px solid var(--mercury);
   color: var(--shark);
   background-color: var(--concrete);
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.05);
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   outline: none;
+
+  height: 3.75rem;
 }
 
 .input:disabled{
@@ -3386,7 +3432,7 @@ textarea {
 }
 
 .input:focus {
-  border: 0.0625rem solid var(--cinnabar);
+  border-color: var(--cinnabar);
   background-color: transparent;
 }
 
@@ -3425,6 +3471,10 @@ textarea {
   white-space: nowrap;
 }
 
+.toggle-garage__input{
+	padding-top: 0 !important;
+}
+
 .textarea {
   resize: none;
   width: 100%;
@@ -3432,17 +3482,18 @@ textarea {
   font-size: 1rem;
   font-family: Inter;
   line-height: 1.4;
-  padding: 1.25rem 1rem;
+  padding: 1.45rem calc(1rem - 1px) 1.25rem;
   color: var(--shark);
-  border: 0.0625rem solid transparent;
+  border: 1px solid transparent;
   background-color: var(--concrete);
   outline: none;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  height: 10rem;
 }
 
 .textarea:focus {
-  border: 0.0625rem solid var(--cinnabar);
+  border-color: var(--cinnabar);
   background-color: transparent;
 }
 
@@ -11333,14 +11384,21 @@ text-transform: uppercase;
   -webkit-column-gap: 0.875rem;
      -moz-column-gap: 0.875rem;
           column-gap: 0.875rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 0.125rem solid var(--mercury);
+
+		  margin-bottom: 1rem;
 }
 
-.total__line:nth-child(2) {
-  padding-bottom: 0rem;
-  border-bottom: none;
+.total__line + .total__line{
+	padding-top: 1rem;
+	border-top: 0.125rem solid var(--mercury);
+}
+
+#pickup-line{
+	display: none;
+}
+
+#pickup-line._show{
+	display: flex;
 }
 
 .total__descr {
@@ -11648,10 +11706,6 @@ text-transform: uppercase;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-.data-checkout__textarea {
-  height: 10rem;
 }
 
 .pickup-logistics__info {
@@ -12827,17 +12881,17 @@ text-transform: uppercase;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-column-gap: 0.5rem;
-     -moz-column-gap: 0.5rem;
-          column-gap: 0.5rem;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0.3125rem 0.75rem;
   border-radius: 0.75rem 0rem;
   background-color: var(--white);
-  line-height: 1.4;
-  border: 0.0625rem solid var(--concrete);
+  line-height: normal;
+  /* border: 0.0625rem solid var(--concrete); */
 }
 
 .status-order::before {
@@ -15066,6 +15120,12 @@ text-transform: uppercase;
 	margin-top: 2.5rem;
 }
 
+.logistics__recipient_bord{
+	border: 2px solid var(--mercury);
+	padding: calc(1.5rem - 2px) calc(1.5rem - 2px) calc(2rem - 4px) calc(1.5rem - 2px);
+	border-radius: .75em 0 .75em 0;
+}
+
 .logistics__recipient-title{
 	font-size: 1.5rem;
     font-style: italic;
@@ -16598,6 +16658,16 @@ text-transform: uppercase;
     display: none;
   }
 
+  .info-good__toggle_marg{
+	margin-bottom: 0;
+  }
+
+
+  .card-news__info{
+	align-items: flex-end;
+	align-content: flex-end;
+  }
+
   .good__tabs {
     display: block;
     padding: 3.75rem 0rem;
@@ -17874,6 +17944,11 @@ text-transform: uppercase;
     margin-bottom: 0.75rem;
   }
 
+  .data-account__button{
+	max-width: none;
+	width: 100%;
+  }
+
   .account__top {
     padding-bottom: 2rem;
     margin-bottom: 1rem;
@@ -18302,6 +18377,10 @@ text-transform: uppercase;
     margin-bottom: 2rem;
   }
 
+  .data-account__btn-change-phone{
+	font-size: .875rem;
+  }
+
   .main-motics__body {
     margin-bottom: 2rem;
     display: -ms-grid;
@@ -18336,6 +18415,10 @@ text-transform: uppercase;
             flex: 1 0 13rem;
     scroll-snap-align: start;
   }
+
+  .logistics__recipient_bord{
+		padding: calc(1rem - 2px) calc(1rem - 2px) calc(1.5rem - 2px) calc(1rem - 2px);
+	}
 
   .main-parts {
     padding: 2.5rem 0rem;

@@ -1034,18 +1034,26 @@
 								<div class="checkout__body">
 									<div class="checkout__data data-checkout">
 										<div class="data-checkout__inner">
-											<div class="data-checkout__line error">
-												<input class="data-checkout__input input" type="text" placeholder="Имя и фамилия" required>
+											<div class="data-checkout__line form__line error">
+												<input class="data-checkout__input input form__input" type="text" required>
+
+												<label class="form__label">Имя и фамилия</label>
 											</div>
-											<div class="data-checkout__line required">
-												<input class="data-checkout__input input" type="email" placeholder="Email" required>
+											<div class="data-checkout__line form__line required">
+												<input class="data-checkout__input input form__input" type="email" required>
+
+												<label class="form__label">Email</label>
 											</div>
-											<div class="data-checkout__line required">
-												<input class="data-checkout__input input" type="tel" placeholder="Телефон" required>
+											<div class="data-checkout__line form__line required">
+												<input class="data-checkout__input input form__input" type="tel" required>
+
+												<label class="form__label">Телефон</label>
 											</div>
 										</div>
-										<div class="data-checkout__line">
-											<textarea class="data-checkout__textarea textarea" placeholder="На что стоит обратить внимание"></textarea>
+										<div class="data-checkout__line form__line">
+											<textarea class="data-checkout__textarea textarea form__textarea"></textarea>
+
+											<label class="form__label">На что стоит обратить внимание</label>
 										</div>
 									</div>
 								</div>
@@ -1077,7 +1085,7 @@
 											</button>
 											<ul class="dropdown-tabs__nav" data-tabs-titles>
 												<li class="dropdown-tabs__item active">
-													<button type="button" class="dropdown-tabs__btn">Самовывоз</button>
+													<button type="button" class="dropdown-tabs__btn" id="pickup">Самовывоз</button>
 												</li>
 												<li class="dropdown-tabs__item">
 													<button type="button" class="dropdown-tabs__btn">Доставка</button>
@@ -1111,14 +1119,20 @@
 													<div class="logistics__recipient-title">Получатель заказа</div>
 
 													<div class="data-checkout__inner">
-														<div class="data-checkout__line">
-															<input class="logistics__recipient-input input" type="text" placeholder="Имя и фамилия" value="Иванов Иван Иванович" disabled>
+														<div class="data-checkout__line form__line">
+															<input class="logistics__recipient-input input form__input" type="text" value="Иванов Иван Иванович" disabled>
+
+															<label class="form__label">Имя и фамилия</label>
 														</div>
-														<div class="data-checkout__line">
-															<input class="logistics__recipient-input input" type="email" placeholder="Email" value="ivanov@mail.ru" disabled>
+														<div class="data-checkout__line form__line">
+															<input class="logistics__recipient-input input form__input" type="email" value="ivanov@mail.ru" disabled>
+
+															<label class="form__label">Email</label>
 														</div>
-														<div class="data-checkout__line">
-															<input class="logistics__recipient-input input" type="tel" placeholder="Телефон" value="+7 903 123 45 67" disabled>
+														<div class="data-checkout__line form__line">
+															<input class="logistics__recipient-input input form__input" type="tel" value="+7 903 123 45 67" disabled>
+
+															<label class="form__label">Телефон</label>
 														</div>
 													</div>
 
@@ -1137,8 +1151,10 @@
 											</div>
 											<div class="logistics__body delivery-logistics">
 												<div class="delivery-logistics__data address-form" style="margin-bottom: 20px;">
-													<div class="address-form__top">
-														<input class="address-form__input input" type="text" placeholder="г. Москва, ул. Комсомольская, 36">
+													<div class="address-form__top form__line">
+														<input class="address-form__input input form__input" type="text">
+
+														<label class="form__label">г. Москва, ул. Комсомольская, 36</label>
 													</div>
 													<div class="address-form__bottom">
 														<label class="address-form__switch switch-toggle">
@@ -1147,14 +1163,20 @@
 															<span class="switch-toggle__descr">Частный дом</span>
 														</label>
 														<div class="address-form__inner">
-															<div class="address-form__line">
-																<input class="address-form__input input" type="text" placeholder="Квартира/офис">
+															<div class="address-form__line form__line">
+																<input class="address-form__input input form__input" type="text">
+
+																<label class="form__label">Квартира/офис</label>
 															</div>
-															<div class="address-form__line">
-																<input class="address-form__input input" type="text" placeholder="Этаж">
+															<div class="address-form__line form__line">
+																<input class="address-form__input input form__input" type="text">
+
+																<label class="form__label">Этаж</label>
 															</div>
-															<div class="address-form__line">
-																<input class="address-form__input input" type="text" placeholder="Подъезд">
+															<div class="address-form__line form__line">
+																<input class="address-form__input input form__input" type="text">
+
+																<label class="form__label">Подъезд</label>
 															</div>
 														</div>
 													</div>
@@ -1346,6 +1368,14 @@
 									<span>890</span> ₽
 								</div>
 							</div>
+							<div class="total__line _show" id="pickup-line">
+								<div class="total__descr">
+									Самовывоз
+								</div>
+								<div class="total__descr">
+									бесплатно
+								</div>
+							</div>
 							<div class="total__line">
 								<div class="total__descr">
 									Итого
@@ -1531,18 +1561,26 @@
 				</div>
 				<div class="info-popup__content">
 					<form class="info-popup__address address-form" action="#">
-						<div class="address-form__top">
-							<input class="address-form__input input" type="text" placeholder="г. Москва, ул. Комсомольская, 36">
+						<div class="address-form__top form__line">
+							<input class="address-form__input input form__input" type="text">
+
+							<label class="form__label">г. Москва, ул. Комсомольская, 36</label>
 						</div>
 						<div class="address-form__inner">
-							<div class="address-form__line">
-								<input class="address-form__input input" type="text" placeholder="Квартира/офис">
+							<div class="address-form__line form__line">
+								<input class="address-form__input input form__input" type="text">
+
+								<label class="form__label">Квартира/офис</label>
 							</div>
-							<div class="address-form__line">
-								<input class="address-form__input input" type="text" placeholder="Этаж">
+							<div class="address-form__line form__line">
+								<input class="address-form__input input form__input" type="text">
+
+								<label class="form__label">Этаж</label>
 							</div>
-							<div class="address-form__line">
-								<input class="address-form__input input" type="text" placeholder="Подъезд">
+							<div class="address-form__line form__line">
+								<input class="address-form__input input form__input" type="text">
+
+								<label class="form__label">Подъезд</label>
 							</div>
 						</div>
 						<label class="address-form__switch switch-toggle">
@@ -1580,8 +1618,10 @@
 				<div class="info-popup__content">
 					<form class="info-popup__form" action="#">
 						<div class="info-popup__inner">
-							<div class="info-popup__line">
-								<input class="info-popup__input input" type="text" placeholder="Введите промокод" required>
+							<div class="info-popup__line form__line">
+								<input class="info-popup__input input form__input" type="text" required>
+
+								<label class="form__label">Введите промокод</label>
 							</div>
 						</div>
 						<button class="info-popup__btn btn-red-fill">
@@ -1625,8 +1665,10 @@
 					</div>
 					<form class="info-popup__form" action="#">
 						<div class="info-popup__inner">
-							<div class="info-popup__line">
-								<input class="info-popup__input input" type="text" required>
+							<div class="info-popup__line form__line">
+								<input class="info-popup__input input form__input" type="text" required>
+
+								<label class="form__label">&nbsp;</label>
 							</div>
 						</div>
 						<button class="info-popup__btn btn-red-fill">
@@ -2047,11 +2089,15 @@
 			<div class="info-popup__content">
 				<form class="info-popup__form" action="#">
 					<div class="info-popup__inner">
-						<div class="info-popup__line error">
-							<input class="info-popup__input input" type="text" placeholder="Представьтесь" required>
+						<div class="info-popup__line form__line error">
+							<input class="info-popup__input input form__input" type="text" required>
+
+							<label class="form__label">Представьтесь</label>
 						</div>
-						<div class="info-popup__line">
-							<input class="info-popup__input input error" type="tel" placeholder="Телефон" required>
+						<div class="info-popup__line form__line">
+							<input class="info-popup__input input form__input error" type="tel" required>
+
+							<label class="form__label">Телефон</label>
 						</div>
 					</div>
 					<button class="info-popup__btn btn-red-fill">
@@ -2084,14 +2130,20 @@
 			<div class="info-popup__content">
 				<form class="info-popup__form" action="#">
 					<div class="info-popup__inner">
-						<div class="info-popup__line error">
-							<input class="info-popup__input input" type="text" placeholder="Представьтесь" required>
+						<div class="info-popup__line form__line error">
+							<input class="info-popup__input input form__input" type="text" required>
+
+							<label class="form__label">Представьтесь</label>
 						</div>
-						<div class="info-popup__line">
-							<input class="info-popup__input input error" type="tel" placeholder="Телефон" required>
+						<div class="info-popup__line form__line">
+							<input class="info-popup__input input form__input error" type="tel" required>
+
+							<label class="form__label">Телефон</label>
 						</div>
-						<div class="info-popup__line">
-							<textarea class="info-popup__textarea textarea" placeholder="Опишите, что вам требуется найти"></textarea>
+						<div class="info-popup__line form__line">
+							<textarea class="info-popup__textarea form__textarea textarea"></textarea>
+
+							<label class="form__label">Опишите, что вам требуется найти</label>
 						</div>
 					</div>
 					<button class="info-popup__btn btn-red-fill">
@@ -2150,8 +2202,10 @@
 					Введите свой номер телефона.
 				</div>
 				<form class="authorization-popup__form" action="#">
-					<div class="authorization-popup__form-line required">
-						<input class="authorization-popup__form-input input" type="text" placeholder="Телефон" required>
+					<div class="authorization-popup__form-line form__line required">
+						<input class="authorization-popup__form-input input form__input" type="text" required>
+
+						<label class="form__label">Телефон</label>
 					</div>
 					<button class="authorization-popup__button btn-red-fill">
 						<span>Далее</span>
@@ -2216,11 +2270,15 @@
 			<div class="authorization-popup__content">
 				<form class="authorization-popup__form" action="#">
 					<div class="authorization-popup__form-items">
-						<div class="authorization-popup__form-line required">
-							<input class="authorization-popup__form-input input" type="text" placeholder="Имя и фамилия" required>
+						<div class="authorization-popup__form-line form__line required">
+							<input class="authorization-popup__form-input input form__input" type="text" required>
+
+							<label class="form__label">Имя и фамилия</label>
 						</div>
-						<div class="authorization-popup__form-line required">
-							<input class="authorization-popup__form-input input" type="tel" placeholder="Телефон" required>
+						<div class="authorization-popup__form-line form__line required">
+							<input class="authorization-popup__form-input input form__input" type="tel" required>
+
+							<label class="form__label">Телефон</label>
 						</div>
 					</div>
 					<button class="authorization-popup__button btn-red-fill">
@@ -2261,11 +2319,15 @@
 				</div>
 				<form class="contact-popup__form" action="#">
 					<div class="contact-popup__form-body">
-						<div class="contact-popup__form-line required">
-							<input class="contact-popup__form-input input" type="text" required placeholder="Имя">
+						<div class="contact-popup__form-line form__line required">
+							<input class="contact-popup__form-input input form__input" type="text" required>
+
+							<label class="form__label">Имя</label>
 						</div>
-						<div class="contact-popup__form-line required">
-							<input class="contact-popup__form-input input" type="tel" required placeholder="Телефон">
+						<div class="contact-popup__form-line form__line required">
+							<input class="contact-popup__form-input input form__input" type="tel" required>
+
+							<label class="form__label">Телефон</label>
 						</div>
 					</div>
 					<div class="contact-popup__consent consent-checkbox">
@@ -2393,14 +2455,20 @@
 							<span class="switch-toggle__descr">Частный дом</span>
 						</label>
 						<div class="address-form__inner">
-							<div class="address-form__line">
-								<input class="address-form__input input" type="text" placeholder="Квартира/офис">
+							<div class="address-form__line form__line">
+								<input class="address-form__input input form__input" type="text">
+
+								<label class="form__label">Квартира/офис</label>
 							</div>
-							<div class="address-form__line">
-								<input class="address-form__input input" type="text" placeholder="Этаж">
+							<div class="address-form__line form__line">
+								<input class="address-form__input input form__input" type="text">
+
+								<label class="form__label">Этаж</label>
 							</div>
-							<div class="address-form__line">
-								<input class="address-form__input input" type="text" placeholder="Подъезд">
+							<div class="address-form__line form__line">
+								<input class="address-form__input input form__input" type="text">
+
+								<label class="form__label">Подъезд</label>
 							</div>
 						</div>
 					</div>
