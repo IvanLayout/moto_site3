@@ -11324,9 +11324,13 @@ text-transform: uppercase;
   transition: color 0.3s ease 0s;
 }
 
+.discount-checkout__item_marg{
+	margin-bottom: 1rem;
+}
+
 .action-basket__message {
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 0.75rem 0rem;
   background: var(--concrete);
 }
@@ -11409,6 +11413,15 @@ text-transform: uppercase;
      -moz-column-gap: 0.25rem;
           column-gap: 0.25rem;
   line-height: 1.4;
+}
+
+.total__descr._flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+	column-gap: 0.25rem;
 }
 
 .total__count {
@@ -12135,6 +12148,10 @@ text-transform: uppercase;
   border: 0.125rem solid transparent;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.discount-checkout__btn-popup_pad{
+	padding: calc(1rem -2px);
 }
 
 .discount-checkout__btn-popup-inner {
